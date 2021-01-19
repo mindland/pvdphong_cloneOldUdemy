@@ -1,0 +1,128 @@
+.navbar {
+    @include styleText($color-black-light, $fs-1, $fw-normal);
+
+    .header_left {
+        display: flex;
+        align-items: center;
+
+        .navbar-brand {
+            flex-grow: 1;
+            img{
+                width: 110px;
+                height: 32px;
+            
+            }
+        }
+        
+        .categories { 
+            flex-grow: 1;
+            color: $color-gray-7;
+            span {
+                @include styleText($color-black-light, $fs-1, $fw-normal);   
+            }
+        }
+        
+        .input_search {
+            flex-grow: 5;
+            @include search_box($fs-1, $color-gray-1, $color-gray-3 ,44px, $fs-0); 
+        }
+        
+    }
+
+    .header_right {
+       
+        .navbar-nav {
+            width: 100%;
+            justify-content: space-around;
+            .nav-item{
+                height: 44px;
+                display: flex;
+                align-items: center;
+                .border-divider {
+                    height: 80%;
+                    border-left: 1px solid $color-gray-6;
+                    padding: 0 8px;
+                }
+            }   
+
+            .business, .teach {
+                border: 1px solid transparent;
+                border-radius: $border-radius;
+                &:hover {
+                    border: 1px solid $color-gray-6;
+                    background-color: $color-gray-1;
+                }
+            }
+            
+            .nav-item:nth-child(3){
+                &:hover {
+                    background-color: $color-white-0;
+                }
+
+                a {
+                    border-radius: 50%;
+                    height: 44px;
+                    width: 44px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 18px;
+                    &:hover {
+                        background-color: $color-gray-1;
+                        border: 1px solid $color-gray-6;
+                    }
+                }
+            }
+
+            .nav-item:nth-child(4){
+                button {
+                    &:focus {
+                        box-shadow: none;
+                    }
+                }  
+            }
+
+           
+        }
+    }
+}
+
+
+// RESPONSIVE
+
+.navbar {
+    @include responsive('extra-large') {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+.header_left {
+    @include responsive('medium') {
+        justify-content: space-around;
+        .navbar-brand {
+            display: flex;
+            justify-content: center ;
+        }
+
+        .categories, .input_search {
+            display: none;
+        }
+    }
+}
+
+.header_right {
+    @include responsive('extra-large') {
+        .navbar-nav {
+            .business , .teach , .border-divider{
+                display: none !important;
+            }
+        }
+    }
+    
+    @include responsive('medium') {
+        .nav-item:nth-child(4) {
+            display: none !important;
+        }
+    }
+}

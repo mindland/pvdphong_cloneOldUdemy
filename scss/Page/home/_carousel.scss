@@ -1,0 +1,123 @@
+.udeCarousel {
+  background: url(../img/cover.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  display: flex;
+  align-items: center;
+
+  .udeCarousel__container {
+    width: 85%;
+    margin: 0 auto;
+
+    .udeCarousel__content {
+      width: 50%;
+
+      h2 {
+        color: $color-white-0;
+        font-size: $fs-4;
+        font-weight: $fw-bold-1;
+      }
+      p {
+        color: $color-white-0;
+        font-size: $fs-0 + 3;
+      }
+    }
+
+    .input_search {
+      z-index: 999;
+      width: 65%;
+      @include search_box($fs-2, $color-white-0,$color-gray-3, 50px, $fs-2);
+    }
+  
+  }
+}
+
+.udeCarousel__info {
+  width: 100%;
+  background: linear-gradient(-45deg, #ec5252 0%, #6e1a52 100%);
+  padding: 15px 0;
+  color: $color-white-0;
+
+  .udeCarousel__info__container {
+    width: 85%;
+    margin: 0 auto;
+
+    .udeCarousel__info__content {
+      display: flex;
+      justify-content: space-between;
+
+      .c-item {
+        display: flex;
+        justify-content: center;
+
+        .c-item i {
+          font-size: 45px;
+          vertical-align: top;
+        }
+      }
+    }
+  }
+}
+
+// RESPONSIVE
+
+.udeCarousel {
+  @include responsive("extra-large") {
+    .udeCarousel__container {
+      width: 90%;
+      .udeCarousel__content {
+        width: 55%;
+        .input_search {
+          width: 90%;
+        }
+      }
+    }
+  }
+  
+  @include responsive("small") {
+    .udeCarousel__container {
+      width: 90%;
+
+      .udeCarousel__content {
+          width: 90%;
+          .input_search {
+            width: 90%;
+            @include search_box($fs-0, $color-white-0,$color-gray-3, 50px, $fs-0);
+          }
+      }
+    }
+  }
+}
+.udeCarousel__info {
+  @include responsive("extra-large") {
+    .udeCarousel__info__container {
+      width: 95%;
+
+      .udeCarousel__info__content {
+        justify-content: space-between;
+        padding: 10px;
+
+        .c-item {
+          text-align: center;
+
+          i {
+            display: none;
+          }
+          h5 {
+            font-size: 17px;
+          }
+          p {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include responsive("small") {
+  .udeCarousel__info {
+    display: none;
+  }
+}

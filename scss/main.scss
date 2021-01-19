@@ -1,0 +1,30 @@
+//Helper
+@import './Helper/variables';
+@import './Helper/mixin';
+
+//Vendors //Code thu vien
+
+//Bases //Code de len code thu vien
+@import './Base/reset';
+@import './Base/customize';
+
+//Components
+@import './Component/button';
+
+//Layouts
+@import './Layout/header';
+@import './Layout/footer';
+
+//Pages
+@import './Page/home/home';
+
+@import './Page/home/carousel';
+@import './Page/home/intro';
+@import './Page/home/banner';
+@import './Page/home/services';
+@import './Page/home/students';
+@import './Page/home/categories';
+@import './Page/home/comments';
+@import './Page/home/companies';
+
+//Themes
